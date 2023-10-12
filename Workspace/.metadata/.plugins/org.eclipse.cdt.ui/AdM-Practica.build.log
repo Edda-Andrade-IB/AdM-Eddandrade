@@ -1,0 +1,54 @@
+23:19:37 **** Incremental Build of configuration Debug for project AdM-Practica ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:251:16: warning: unused variable 'z_asm_simd' [-Wunused-variable]
+  251 |       uint16_t z_asm_simd[4] = {0};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:250:16: warning: unused variable 'y_asm_simd' [-Wunused-variable]
+  250 |       uint16_t y_asm_simd[4] = {20, 30, 40, 50};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:249:16: warning: unused variable 'x_asm_simd' [-Wunused-variable]
+  249 |       uint16_t x_asm_simd[4] = {10, 20, 30, 40};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:226:24: warning: variable 'max_asm' set but not used [-Wunused-but-set-variable]
+  226 |       volatile int32_t max_asm;
+      |                        ^~~~~~~
+../Core/Src/main.c:225:24: warning: variable 'max_c' set but not used [-Wunused-but-set-variable]
+  225 |       volatile int32_t max_c;
+      |                        ^~~~~
+../Core/Src/main.c:137:27: warning: unused variable 'cnt_asm_simd' [-Wunused-variable]
+  137 |         volatile uint32_t cnt_asm_simd = 0;
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:136:27: warning: variable 'cnt_asm' set but not used [-Wunused-but-set-variable]
+  136 |         volatile uint32_t cnt_asm = 0;
+      |                           ^~~~~~~
+../Core/Src/main.c:135:27: warning: variable 'cnt_c' set but not used [-Wunused-but-set-variable]
+  135 |         volatile uint32_t cnt_c = 0;
+      |                           ^~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:86:13: warning: 'downsample_N' declared 'static' but never defined [-Wunused-function]
+   86 | static void downsample_N(int32_t* vector_in, int32_t* vector_out, uint32_t longitud, uint32_t N);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:89:13: warning: 'invertir' declared 'static' but never defined [-Wunused-function]
+   89 | static void invertir (uint16_t* vector, uint32_t longitud);
+      |             ^~~~~~~~
+../Core/Src/main.c:454:13: warning: 'filtro_ventana10' defined but not used [-Wunused-function]
+  454 | static void filtro_ventana10(uint16_t* vector_in, uint16_t* vector_out, uint32_t longitud_vector_in)
+      |             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "AdM-Practica.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Compumax\Documents\GitHub\AdM-Eddandrade\Workspace\AdM-Practica\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AdM-Practica.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AdM-Practica.elf
+ 
+arm-none-eabi-size   AdM-Practica.elf 
+arm-none-eabi-objdump -h -S  AdM-Practica.elf  > "AdM-Practica.list"
+   text	   data	    bss	    dec	    hex	filename
+  10248	     20	   1636	  11904	   2e80	AdM-Practica.elf
+Finished building: default.size.stdout
+ 
+Finished building: AdM-Practica.list
+ 
+
+23:19:37 Build Finished. 0 errors, 11 warnings. (took 790ms)
+

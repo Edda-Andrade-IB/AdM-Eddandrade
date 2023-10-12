@@ -337,3 +337,51 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-08 12:24:44.307
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-10-11 21:22:29.007 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\Compumax\Documents\GitHub\AdM-Eddandrade\Workspace
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-11 21:22:40.678
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-11 21:22:40.687
+!MESSAGE Log4j2 initialized with config file C:\Users\Compumax\Documents\GitHub\AdM-Eddandrade\Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-11 21:22:43.520
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-10-11 21:24:16.636
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/release/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-10-11 21:24:19.307
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.2/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+!SESSION 2023-10-11 22:55:01.426 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\Compumax\Documents\GitHub\AdM-Eddandrade\Workspace
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-11 22:55:04.120
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-11 22:55:04.120
+!MESSAGE Log4j2 initialized with config file C:\Users\Compumax\Documents\GitHub\AdM-Eddandrade\Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-11 22:55:07.235
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-10-11 22:57:51.564
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/release/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-10-11 22:57:54.246
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.2/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-10-11 23:07:16.618
+!MESSAGE Indexed 'AdM-Practica' (22 sources, 77 headers) in 2.38 sec: 8,266 declarations; 39,424 references; 15 unresolved inclusions; 933 syntax errors; 1,240 unresolved names (2.5%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-10-11 23:14:58.025
+!MESSAGE Won't launch debug session since we failed to locate the binary.
