@@ -1,0 +1,17 @@
+22:02:53 **** Incremental Build of configuration Debug for project AdM-ExamenFinal ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Src/asm_func.d" -MT"Core/Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/asm_func.o" "../Core/Src/asm_func.S"
+arm-none-eabi-gcc -o "AdM-ExamenFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Compumax\Documents\GitHub\AdM-Eddandrade\Workspace\AdM-ExamenFinal\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AdM-ExamenFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: AdM-ExamenFinal.elf
+ 
+arm-none-eabi-size   AdM-ExamenFinal.elf 
+arm-none-eabi-objdump -h -S  AdM-ExamenFinal.elf  > "AdM-ExamenFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+   8512	     20	   1636	  10168	   27b8	AdM-ExamenFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: AdM-ExamenFinal.list
+ 
+
+22:02:53 Build Finished. 0 errors, 0 warnings. (took 439ms)
+

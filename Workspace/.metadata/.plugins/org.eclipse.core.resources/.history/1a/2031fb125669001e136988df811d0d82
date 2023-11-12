@@ -1,0 +1,42 @@
+.syntax unified
+.thumb
+.text
+
+@ Simbolos exportados --> No olvidar de colocar los nombres de las funciones aquí
+.global asm_potencia
+.global asm_potencia_DSP
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototipo en "C":
+@   uint32_t asm_potencia (int16_t * vecIn, uint32_t longitud);
+@
+@ Parametros recibidos:
+@   r0: vecIn
+@   r1: longitud
+@
+@ Valor de retorno:
+@   r0: resultado promedio de la suma del cuadrado de los elementos
+@
+.thumb_func
+    asm_potencia:
+
+
+
+
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototipo en "C":
+@   uint32_t asm_potencia_DSP (int16_t * vecIn, uint32_t longitud);
+@
+@ Parametros recibidos:
+@   r0: vecIn
+@   r1: longitud
+@
+@ Valor de retorno:
+@   r0: resultado promedio de la suma del cuadrado de los elementos
+@
+.thumb_func
+    asm_potencia_DSP:

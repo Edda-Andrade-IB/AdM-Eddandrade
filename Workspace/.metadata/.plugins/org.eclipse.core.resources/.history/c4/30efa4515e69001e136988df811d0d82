@@ -1,0 +1,63 @@
+.syntax unified
+.thumb
+.text
+
+@ Simbolos exportados --> No olvidar de colocar los nombres de las funciones aquí
+.global asm_potencia
+.global asm_potencia_DSP
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototipo en "C":
+@   uint32_t asm_potencia (int16_t * vecIn, uint32_t longitud);
+@
+@ Parametros recibidos:
+@   r0: *vecIn
+@   r1: longitud
+@
+@ Valor de retorno:
+@   r0: resultado promedio de la suma del cuadrado de los elementos
+@
+.thumb_func
+    asm_potencia:
+    push {r4,r5} @necesito un registro adicional para adaptar la multiplicación a 16bits signados y otro para guardar la longitud
+@ Inicializar el resultado a 0
+    //ldr r5, [r1] @ guardo el valor de la longitud
+    mov r5, #10
+    mov r2, #0  @ r2 registro utilizado para suma parcial
+
+    @ Loop para recorrer el vector haciendo las cuentas
+    loop_asm_potencia:
+        ldrh r3, [r0], #2  @ Cargo el valor de x[n] en r3 y avanzo el puntero, h por ser de 16 bits
+        mull r3, r4, r3, r3  @ r3=r3*r3 con signo
+        add r2, r2, r3  @ resultado parcial se acumula en r2
+        subs r1, r1, #1  @ Decrementa la longitud
+        bne loop_asm_potencia  @ continúa el loop mientras queden elementos en el vector
+
+
+    	exit_asm_potencia:
+    	 @ Dividir la suma total por la longitud (N)
+        sdiv r0, r2, r5
+		pop {r4,r5}
+	    bx lr
+
+
+
+
+
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Prototipo en "C":
+@   uint32_t asm_potencia_DSP (int16_t * vecIn, uint32_t longitud);
+@
+@ Parametros recibidos:
+@   r0: *vecIn
+@   r1: longitud
+@
+@ Valor de retorno:
+@   r0: resultado promedio de la suma del cuadrado de los elementos
+@
+.thumb_func
+    asm_potencia_DSP:
